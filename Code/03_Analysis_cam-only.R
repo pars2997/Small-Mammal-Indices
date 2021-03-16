@@ -1,6 +1,4 @@
-setwd("C:/Users/A02323599/Dropbox/SmMammal/cam sites only")
-
-indexdat<-read.csv("DensityData.csv")
+indexdat<-read.csv("./Results/DensityData.csv")
 head(indexdat)
 
 # alldat<-merge(newdat,indexdat,by="Site")
@@ -99,7 +97,7 @@ colnames(resultstab)<-c("Intercept","Lower","Upper","Slope","Lower","Upper","R2"
 resultstab$model<-unlist(modnames)
 resultstab
 
-write.csv(resultstab,file="RegressionresultsCI.csv")
+write.csv(resultstab,file="./Results/RegressionresultsCI.csv")
 
 ####MNA####
 

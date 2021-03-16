@@ -1,7 +1,6 @@
 ##Set directory and install/load packages##
-setwd("C:/users/parso/dropbox/smmammal/cam sites only")
 library(secr)
-
+setwd("./Data")
 #Read in data#
 mousedat<-read.capthist("SECR_MOUSE_cam.txt",list("FullSession.csv","FullSession.csv","FullSession.csv","FullSession.csv",
                                             "FullSession.csv","FullSession.csv","FullSession.csv","FullSession.csv",
@@ -19,7 +18,7 @@ voledat<-read.capthist("SECR_VOLE_cam.txt",list("FullSession.csv","FullSession.c
                                                    7,7,7,7),
                          covnames = "PM")
 
-chipdat<-read.capthist("SECR_CHIP_Fix_cam.txt",list("FullSession.csv","FullSession.csv","FullSession.csv",
+chipdat<-read.capthist("SECR_CHIP_cam.txt",list("FullSession.csv","FullSession.csv","FullSession.csv",
                                                   "FullSession.csv","FullSession.csv","FullSession.csv",
                                                   "FullSession.csv","FullSession.csv","Minustwotraps.csv","FullSession.csv","FullSession.csv","FullSession.csv"),
                          fmt="trapID",noccasions=c(7,7,7,
@@ -55,6 +54,7 @@ totder<-derived(totmod)
 #Please do note any errors or warnings. Most likely to occur with vole and chip models#
 
 ##Format output and export to csv##
+setwd("../results")
 mousevals<-mouseder[[1]]
 for(i in 2:length(mouseder)){
   mousevals<-rbind(mousevals,mouseder[[i]])

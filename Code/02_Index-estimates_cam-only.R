@@ -1,29 +1,27 @@
 ##Set working dirrectory to location with stations file##
 
-setwd("C:/Users/A02323599/Dropbox/SmMammal")
-
 
 ##Install Packages##
 require(camtrapR)
 require(tidyr)
 
 ##Read in Stations file, add column with site-trap combo for station, set dates##
-stations<-read.csv("Stations.csv")
+stations<-read.csv("./Data/Stations.csv")
 stations$Station<-paste(stations$Site,stations$Trap,sep="_")
 stations$Set.Date<-as.Date(stations$Set.Date,format="%m/%d/%Y")
 stations$Pull.Date<-as.Date(stations$Pull.Date,format="%m/%d/%Y")
 
 
 ##Read in small mammal camera data##
-combined.df<-read.csv("SmallMamTL1617.csv")
+combined.df<-read.csv("./Data/SmallMamTL1617.csv")
 combined.df$Date<-as.Date(combined.df$Date,format="%m/%d/%Y")
 combined.df$DateTimeOriginal<-with(combined.df, as.POSIXct(paste(Date, Time),format="%Y-%m-%d %H:%M:%S"))
 
 ##Read in abundance estimates from live trapping##
-densitydat<-read.csv("densityestimates.csv")
+densitydat<-read.csv("./Results/densityestimates.csv")
 
 ##read in Total individual data##
-Capturedata<- read.csv("CaptureData.csv")
+Capturedata<- read.csv("./Data/CaptureData.csv")
 
 
 
@@ -931,4 +929,4 @@ densitydat$nights_5 <-TotalCapsList[[5]]$Nights
 densitydat$nights_6 <-TotalCapsList[[6]]$Nights
 densitydat$nights_7 <-TotalCapsList[[7]]$Nights
 
-write.csv(densitydat,file="./cam sites only/DensityData.csv")
+write.csv(densitydat,file="./Results/DensityData.csv")

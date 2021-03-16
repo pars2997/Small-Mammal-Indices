@@ -318,4 +318,4 @@ resultstab<-data.frame(resultstab)
 resultstab$mod<-c("mprop","vprop","cprop","tprop","mind","vind","cind","tind")
 colnames(resultstab)<-c("Intercept","Upper.CI","Lower.CI","Slope","Upper.CI","Lower.CI","R2","Upper.CI","Lower.CI","Mod")
 resultstab
-write.csv(resultstab,file="Bootstrapresults.csv")
+write.csv(resultstab,file="./Results/Bootstrapresults.csv")
