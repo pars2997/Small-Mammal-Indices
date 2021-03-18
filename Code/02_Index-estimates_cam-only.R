@@ -929,4 +929,8 @@ densitydat$nights_5 <-TotalCapsList[[5]]$Nights
 densitydat$nights_6 <-TotalCapsList[[6]]$Nights
 densitydat$nights_7 <-TotalCapsList[[7]]$Nights
 
+densitydat<-densitydat[,-1]
+densitydat[is.na(densitydat$vole_den),"vole_den"]<-densitydat[is.na(densitydat$vole_den),"voleMNA_7"]
+densitydat[is.na(densitydat$chip_den),"chip_den"]<-densitydat[is.na(densitydat$chip_den),"chipMNA_7"]
+
 write.csv(densitydat,file="./Results/DensityData.csv")
