@@ -1,4 +1,4 @@
-This repository contains the necessary R code and data to reproduce the results of Parsons et al. (2021).
+This repository contains the necessary R code and data to reproduce the results of Parsons et al. (2021; DOI: 10.1139/cjz-2020-0298) 
 This project compared the efficacy of 4 different indices for small mammal density. Two indices were based 
 on live trapping: minimum number alive and captures per unit effort. Two indices were based on camera
 trapping: proportion of camera nights detecting a species and the number of independent photos. The data and 
